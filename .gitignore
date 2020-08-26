@@ -1,0 +1,7 @@
+*.ipynb
+*.jpg
+*.pth
+*.o
+
+.ipynb_checkpoints
+.vscode
