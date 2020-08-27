@@ -19,7 +19,6 @@ const char* keys =
 
 Mat1b grabCutWrapper(Mat img, int iterations)
 {
-    cout<< "helll vette";
     Mat1b markers(img.rows, img.cols);
     markers.setTo(GC_PR_BGD);
 
@@ -54,23 +53,19 @@ img.copyTo(tmp, mask_fgpf);
 
 int main(int argc, char** argv)
 {
-    cout<< "here \n\n\n\n";
 
     CommandLineParser parser( argc, argv, keys );
 
     Mat src1 = imread("/home/aditya/Code/Re-Id/t1.jpg");
     // cout<<src1;
-    Mat src2 = imread("/home/aditya/Code/Re-Id/test.jpg");
+    Mat src2 = imread("/home/aditya/Code/Re-Id/test2.jpg");
     // cout<<src2;
     if (!src1.data || !src2.data)
     { 
-        cout<< "lol";
         return 1; }
-    cout<< "here \n";    
 
     // src1 = grabCutWrapper(src1, 1);
     // src2 = grabCutWrapper(src2, 1);
-    cout<< "here\n";
     Mat hsv1 ,hsv2;
     cvtColor( src1, hsv1, COLOR_BGR2HSV );
     cvtColor( src2, hsv2, COLOR_BGR2HSV );
